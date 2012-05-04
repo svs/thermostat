@@ -9,7 +9,7 @@ class Date
   end
   
   def inspect
-    self.strftime("%Y-%m-%d") + weekday.to_s
+    "#{self.strftime("%Y-%m-%d")} #{weekday.to_s.capitalize}"
   end
   
 end
