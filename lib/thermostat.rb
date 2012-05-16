@@ -28,12 +28,12 @@ class Thermostat
   # options is a Hash with the following keys
   #
   # start_date
-  # end_date
-  # n
+  # end_date    -> the last date of the series
+  # n           -> the number of dates one wants in the series. Either this or end_date muse be specified
   # frequency   -> one of :daily, :weekly, :biweekly, :quadweekly, :monthly, :bimonthly, :quarterly, :semiannually 
   #                TODO: go crazy and pass a Hash of type {:period => :monthly, :every => 4}
   # days        -> WEEKDAY element(s) to constrain schedules. if not specified, defaults to start_date.weekday where appropriate
-  # weekly_off  -> a WEEKDAY element
+  # weekly_off  -> a WEEKDAY element or array of weekday elements which specifies which weekday(s) to skip in the schedule.
   # holidays    -> a Hash of the type {:holiday_date => :date_to_replace_with}
   #
   # one of end_date or n must be specified
