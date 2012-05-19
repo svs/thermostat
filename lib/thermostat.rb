@@ -1,4 +1,5 @@
 require 'ice_cube'
+require 'time'
 require 'date'
 class Date
 
