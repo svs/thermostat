@@ -66,13 +66,13 @@ describe Thermostat do
 
     it "should give correct dates for single weekday with days specified" do
       d = Date.new(2012,5,4)
-      @sched = Thermostat.new(:start_date => d, :end_date => Date.today+14, :frequency => :weekly, :days => :thursday)
+      @sched = Thermostat.new(:start_date => d, :end_date => d+14, :frequency => :weekly, :days => :thursday)
       @sched.dates.should == [d + 6, d + 13]
     end
 
     it "should give correct dates for single weekday with days specified" do
       d = Date.new(2012,5,4) #is a Friday btw
-      @sched = Thermostat.new(:start_date => d, :end_date => Date.today+14, :frequency => :weekly, :days => [:tuesday,:thursday])
+      @sched = Thermostat.new(:start_date => d, :end_date => d+14, :frequency => :weekly, :days => [:tuesday,:thursday])
       @sched.dates.should == [d + 4, d + 6, d + 11, d + 13]
     end
   end
@@ -86,13 +86,13 @@ describe Thermostat do
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4)
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+21, :frequency => :biweekly, :days => :thursday)
+        @sched = Thermostat.new(:start_date => d, :end_date => d+21, :frequency => :biweekly, :days => :thursday)
         @sched.dates.should == [d + 6, d + 20]
       end
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4) #is a Friday btw
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+21, :frequency => :biweekly, :days => [:tuesday,:thursday])
+        @sched = Thermostat.new(:start_date => d, :end_date => d+21, :frequency => :biweekly, :days => [:tuesday,:thursday])
         @sched.dates.should == [d + 4, d + 6, d + 18, d + 20]
       end
     end
@@ -107,13 +107,13 @@ describe Thermostat do
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4)
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+56, :frequency => :quadweekly, :days => :thursday)
+        @sched = Thermostat.new(:start_date => d, :end_date => d+56, :frequency => :quadweekly, :days => :thursday)
         @sched.dates.should == [d + 6, d + 34]
       end
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4) #is a Friday btw
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+56, :frequency => :quadweekly, :days => [:tuesday,:thursday])
+        @sched = Thermostat.new(:start_date => d, :end_date => d+56, :frequency => :quadweekly, :days => [:tuesday,:thursday])
         @sched.dates.should == [d + 4, d + 6, d + 32, d + 34]
       end
     end
@@ -129,13 +129,13 @@ describe Thermostat do
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4)
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+60, :frequency => :monthly, :days => {:thursday => [2,4]})
+        @sched = Thermostat.new(:start_date => d, :end_date => d+60, :frequency => :monthly, :days => {:thursday => [2,4]})
         @sched.dates.should == [Date.new(2012,5,10), Date.new(2012,5,24), Date.new(2012,6,14), Date.new(2012,6, 28)]
       end
       
       it "should give correct dates for single weekday with days specified" do
         d = Date.new(2012,5,4) #is a Friday btw
-        @sched = Thermostat.new(:start_date => d, :end_date => Date.today+30, :frequency => :monthly, :days => {:tuesday => [1,3], :thursday => [2,4]})
+        @sched = Thermostat.new(:start_date => d, :end_date => d+30, :frequency => :monthly, :days => {:tuesday => [1,3], :thursday => [2,4]})
         @sched.dates.should == [Date.new(2012,5,10), Date.new(2012,5,15), Date.new(2012,5,24)]
       end
     end
