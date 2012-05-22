@@ -4,8 +4,6 @@ Thermostat keeps your IceCube humming alomg nicely.
 
 [![Build Status](https://secure.travis-ci.org/svs/thermostat.png)](http://travis-ci.org/svs/thermostat)
 
-
-
 It presents a declarative interface to IceCube and makes it more suitable to be called programmatically. It also has some niceties around handling holidays and so on.
 Thermostat provides a uniform way to generate a list of dates. It takes care of building an IceCube object with the passed parameters.
  

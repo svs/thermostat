@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'svs@svs.io'
   s.files       = ["lib/thermostat.rb"]
   s.homepage    = 'http://github.com/svs/thermostat'
+
+  s.add_dependency 'ice_cube'
 end
