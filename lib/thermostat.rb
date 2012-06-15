@@ -23,7 +23,7 @@ class Thermostat
   # this class takes care of building the specific IceCube object (in this case)
   # and allows one to easily replace IceCube with something else later
   
-  # given an appropriate inititalizer, the Schedule#dates method will provide the required dates
+  # given an appropriate inititalizer, the Thermostat#dates method will provide the required dates
   # it is also aware of holiday calendars (can be overridden)
 
   # options is a Hash with the following keys
