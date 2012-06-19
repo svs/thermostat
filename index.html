@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Thermostat by svs</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Thermostat</h1>
+        <p>Declarative interface to IceCube</p>
+        <p class="view"><a href="https://github.com/svs/thermostat">View the Project on GitHub <small>svs/thermostat</small></a></p>
+        <ul>
+          <li><a href="https://github.com/svs/thermostat/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/svs/thermostat/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/svs/thermostat">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Thermostat Gem</h1>
+
+<p>Thermostat keeps your IceCube humming along nicely.</p>
+
+<p><a href="http://travis-ci.org/svs/thermostat"><img src="https://secure.travis-ci.org/svs/thermostat.png" alt="Build Status"></a></p>
+
+<p>It presents a declarative interface to IceCube and makes it more suitable to be called programmatically. It also has some niceties around handling holidays and so on.
+Thermostat provides a uniform way to generate a list of dates. It takes care of building an IceCube object with the passed parameters.</p>
+
+<p>given an appropriate inititalizer, the Thermostat#dates method will provide the required dates. It also adjusts dates for holidays</p>
+
+<h2>Usage</h2>
+
+<p>call it thusly</p>
+
+<pre><code>@sched = Thermostat.new(:start_date =&gt; Date.today, :end_date =&gt; Date.today+14, :frequency =&gt; :weekly, :holidays =&gt; {(Date.today + 7) =&gt; Date.today + 9})
+</code></pre>
+
+<p>options are passed as a Hash with the following keys</p>
+
+<pre><code>start_date
+end_date
+n
+frequency   -&gt; one of :daily, :weekly, :biweekly, :quadweekly, :monthly, :bimonthly, :quarterly, :semiannually 
+              or alternatively a Hash of {:period =&gt; :monthly, :every =&gt; 4}
+days        -&gt; WEEKDAY element(s) to constrain schedules. if not specified, defaults to start_date.weekday where appropriate
+weekly_off  -&gt; a WEEKDAY element
+holidays    -&gt;  a Hash of the type {:holiday_date =&gt; :date_to_replace_with}
+</code></pre>
+
+<p>one of end_date or n must be specified</p>
+
+<p>See the specs for more usage examples</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/svs">svs</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
